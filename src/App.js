@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import {
+  AppBar,
+  Container,
+  CssBaseline,
+  Toolbar,
+  Typography
+} from "@material-ui/core";
+import AcUnitIcon from "@material-ui/icons/AcUnit";
+
+import MainComponent from "./components/MainComponent/MainComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <CssBaseline />
+      <AppBar position="relative" color="primary">
+        <Toolbar color="primary" variant="dense">
+          <AcUnitIcon />
+          <Typography variant="h6" color="inherit" noWrap>
+            Weather App
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Container maxWidth="lg">
+        <MainComponent />
+      </Container>
+    </Fragment>
   );
 }
 
