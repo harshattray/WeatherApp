@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-09T17:07:54+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T12:17:45+02:00
+ * @Last modified time: 2020-10-12T14:09:29+02:00
  */
 
 import React, { Fragment, Component } from "react";
@@ -12,11 +12,13 @@ import { withStyles, Container, CircularProgress } from "@material-ui/core";
 
 import {
   fetchWeatherData,
-  setCurrentIndex
+  setCurrentIndex,
+  selectTempType
 } from "../../actions/fetchWeatherActions";
 
 import WeatherCardsComponent from "../WeatherCardsComponent/WeatherCardsComponent";
 import { PaginationComponent } from "../PaginationComponent/PaginationComponent";
+import { TemperatureSelectorComponent } from "../TemperatureSelectorComponent/TemperatureSelectorComponent";
 
 import styles from "../../globalstyles/globalStyles";
 
@@ -31,7 +33,9 @@ class MainComponent extends Component {
       classes,
       setCurrentIndex,
       currentIndex,
-      weatherListing
+      weatherListing,
+      selectTempType,
+      selectedTemp
     } = this.props;
     if (isLoading) {
       return (
@@ -45,13 +49,21 @@ class MainComponent extends Component {
         {!isLoading && (
           <div className={classes.content}>
             <Container component="main" maxWidth="md">
+              <TemperatureSelectorComponent
+                classes={classes}
+                selectTempType={selectTempType}
+                selectedTemp={selectedTemp}
+              />
               <PaginationComponent
                 classes={classes}
                 setCurrentIndex={setCurrentIndex}
                 currentIndex={currentIndex}
                 weatherListing={weatherListing}
               />
-              <WeatherCardsComponent classes={classes} />
+              <WeatherCardsComponent
+                classes={classes}
+                selectedTemp={selectedTemp}
+              />
             </Container>
           </div>
         )}
@@ -64,11 +76,15 @@ function mapStateToProps({ weatherStack }) {
   return {
     weatherListing: weatherStack.weatherData,
     isLoading: weatherStack.isLoading,
-    currentIndex: weatherStack.currentIndex
+    currentIndex: weatherStack.currentIndex,
+    selectedTemp: weatherStack.selectedTemp
   };
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchWeatherData, setCurrentIndex }, dispatch);
+  return bindActionCreators(
+    { fetchWeatherData, setCurrentIndex, selectTempType },
+    dispatch
+  );
 }
 
 export default withStyles(styles)(

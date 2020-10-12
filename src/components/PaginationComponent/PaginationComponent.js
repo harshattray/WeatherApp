@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-12T11:58:00+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T12:29:39+02:00
+ * @Last modified time: 2020-10-12T13:41:56+02:00
  */
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
@@ -26,12 +26,12 @@ export const PaginationComponent = props => {
   };
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={2} justify="flex-start" className={classes.pullLeft}>
+    <Grid container justify="flex-start" spacing={2}>
+      <Grid item xs={2} className={classes.pullLeft}>
         <Button
           id="previousPageButton"
           className={classes.button}
-          color="primary"
+          color="secondary"
           disabled={hidePreviousButton}
           onClick={paginationTrigger}
           value={"previous"}
@@ -45,7 +45,7 @@ export const PaginationComponent = props => {
         <Button
           id="nextPageButton"
           className={classes.button}
-          color="primary"
+          color="secondary"
           disabled={hideNextButton}
           onClick={paginationTrigger}
           value={"next"}

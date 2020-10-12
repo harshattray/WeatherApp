@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-10T15:56:59+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T12:16:47+02:00
+ * @Last modified time: 2020-10-12T13:58:29+02:00
  */
 
 import {
@@ -10,14 +10,16 @@ import {
   FETCHING_WEATHER,
   FETCHING_WEATHER_FAIL,
   SELECT_WEATHER_CARD,
-  SET_CURRENT_INDEX
+  SET_CURRENT_INDEX,
+  SELECTED_TEMP_TYPE
 } from "../actions/types";
 
 import { weatherDataBuilder } from "../helpers/helpers";
 
 let initial_state = {
   isLoading: true,
-  currentIndex: 0
+  currentIndex: 0,
+  selectedTemp: "celcius"
 };
 
 export default (state = initial_state, action) => {
@@ -43,6 +45,11 @@ export default (state = initial_state, action) => {
       return {
         ...state,
         currentIndex: action.payload
+      };
+    case SELECTED_TEMP_TYPE:
+      return {
+        ...state,
+        selectedTemp: action.payload
       };
     default:
       return state;

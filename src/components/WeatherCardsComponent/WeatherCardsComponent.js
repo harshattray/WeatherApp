@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-10T16:00:41+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T12:26:45+02:00
+ * @Last modified time: 2020-10-12T14:20:20+02:00
  */
 import React, { Fragment, Component } from "react";
 import { bindActionCreators } from "redux";
@@ -19,7 +19,8 @@ class WeatherCardsComponent extends Component {
       weatherListing,
       selectWeatherCard,
       classes,
-      currentIndex
+      currentIndex,
+      selectedTemp
     } = this.props;
     return (
       <Fragment>
@@ -34,6 +35,7 @@ class WeatherCardsComponent extends Component {
             selectWeatherCard={selectWeatherCard}
             classes={classes}
             currentIndex={currentIndex}
+            selectedTemp={selectedTemp}
           />
         </Grid>
       </Fragment>
@@ -42,7 +44,7 @@ class WeatherCardsComponent extends Component {
 }
 
 const WeatherCards = props => {
-  const { classes, currentIndex } = props;
+  const { classes, currentIndex, selectedTemp } = props;
 
   const weatherDataBlock = props.weatherListing.slice(
     currentIndex,
@@ -54,7 +56,7 @@ const WeatherCards = props => {
       value.date === selectWeatherCard.date ? classes.selectedCard : undefined
     );
     return (
-      <Fragment>
+      <Fragment key={index}>
         <Grid item xs={isMobile() ? 12 : 4}>
           <Card
             id={"weather-card-" + index}
@@ -66,8 +68,8 @@ const WeatherCards = props => {
               <ul>
                 <li>
                   <Typography variant="h6">
-                    Temp: {value["celcius"]}{" "}
-                    {"celcius" === TEMPERATURES.CELCIUS ? "° C" : "° F"}
+                    Temp: {value[selectedTemp]}{" "}
+                    {selectedTemp == TEMPERATURES.CELCIUS ? "° C" : "° F"}
                   </Typography>
                 </li>
                 <li>Date: {value.displayDate}</li>

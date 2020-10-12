@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-10T15:46:23+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T11:56:37+02:00
+ * @Last modified time: 2020-10-12T13:54:42+02:00
  */
 
 import axios from "axios";
@@ -11,7 +11,8 @@ import {
   FETCHING_WEATHER,
   FETCHING_WEATHER_FAIL,
   SELECT_WEATHER_CARD,
-  SET_CURRENT_INDEX
+  SET_CURRENT_INDEX,
+  SELECTED_TEMP_TYPE
 } from "./types";
 
 import { API } from "../helpers/constants";
@@ -44,6 +45,13 @@ export const selectWeatherCard = value => async (dispatch, getState) => {
 export const setCurrentIndex = value => async (dispatch, getState) => {
   dispatch({
     type: SET_CURRENT_INDEX,
+    payload: value
+  });
+};
+
+export const selectTempType = value => async (dispatch, getState) => {
+  dispatch({
+    type: SELECTED_TEMP_TYPE,
     payload: value
   });
 };
