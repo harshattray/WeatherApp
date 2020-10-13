@@ -2,12 +2,10 @@
  * @Author: harsha
  * @Date:   2020-10-09T14:21:43+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-11T11:08:46+02:00
+ * @Last modified time: 2020-10-13T15:50:05+02:00
  */
 
 import React, { Fragment } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import {
   AppBar,
   Container,

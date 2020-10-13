@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-09T17:07:54+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T14:09:29+02:00
+ * @Last modified time: 2020-10-13T15:35:29+02:00
  */
 
 import React, { Fragment, Component } from "react";
@@ -19,6 +19,7 @@ import {
 import WeatherCardsComponent from "../WeatherCardsComponent/WeatherCardsComponent";
 import { PaginationComponent } from "../PaginationComponent/PaginationComponent";
 import { TemperatureSelectorComponent } from "../TemperatureSelectorComponent/TemperatureSelectorComponent";
+import { ChartsComponent } from "../ChartsComponent/ChartsComponent";
 
 import styles from "../../globalstyles/globalStyles";
 
@@ -35,7 +36,8 @@ class MainComponent extends Component {
       currentIndex,
       weatherListing,
       selectTempType,
-      selectedTemp
+      selectedTemp,
+      selectedWeather
     } = this.props;
     if (isLoading) {
       return (
@@ -64,6 +66,11 @@ class MainComponent extends Component {
                 classes={classes}
                 selectedTemp={selectedTemp}
               />
+              <ChartsComponent
+                classes={classes}
+                selectedWeather={selectedWeather}
+                selectedTemp={selectedTemp}
+              />
             </Container>
           </div>
         )}
@@ -77,7 +84,8 @@ function mapStateToProps({ weatherStack }) {
     weatherListing: weatherStack.weatherData,
     isLoading: weatherStack.isLoading,
     currentIndex: weatherStack.currentIndex,
-    selectedTemp: weatherStack.selectedTemp
+    selectedTemp: weatherStack.selectedTemp,
+    selectedWeather: weatherStack.selectedWeather
   };
 }
 function mapDispatchToProps(dispatch) {
