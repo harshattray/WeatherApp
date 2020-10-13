@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-13T15:24:22+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-13T15:48:07+02:00
+ * @Last modified time: 2020-10-13T16:13:31+02:00
  */
 
 import React from "react";
@@ -49,7 +49,7 @@ export const ChartsComponent = props => {
         options={state.options}
         series={state.series}
         type="bar"
-        id="weather-chart"
+        id="temp-chart"
       />
       <Grid alignItems="flex-end" container spacing={5}>
         <Grid item sm={5} xs={4} />

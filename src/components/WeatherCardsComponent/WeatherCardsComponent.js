@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-10T16:00:41+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-13T15:32:09+02:00
+ * @Last modified time: 2020-10-13T17:03:47+02:00
  */
 import React, { Fragment, Component } from "react";
 import { bindActionCreators } from "redux";
@@ -13,14 +13,15 @@ import { isMobile } from "../../helpers/helpers";
 import { TEMPERATURES } from "../../helpers/constants";
 import { selectWeatherCard } from "../../actions/fetchWeatherActions";
 
-class WeatherCardsComponent extends Component {
+export class WeatherCardsComponent extends Component {
   render() {
     const {
       weatherListing,
       selectWeatherCard,
       classes,
       currentIndex,
-      selectedTemp
+      selectedTemp,
+      selectedWeather
     } = this.props;
     return (
       <Fragment>
@@ -36,6 +37,7 @@ class WeatherCardsComponent extends Component {
             classes={classes}
             currentIndex={currentIndex}
             selectedTemp={selectedTemp}
+            selectedWeather={selectedWeather}
           />
         </Grid>
       </Fragment>
@@ -43,8 +45,8 @@ class WeatherCardsComponent extends Component {
   }
 }
 
-const WeatherCards = props => {
-  const { classes, currentIndex, selectedTemp } = props;
+export const WeatherCards = props => {
+  const { classes, currentIndex, selectedTemp, selectedWeather } = props;
 
   const weatherDataBlock = props.weatherListing.slice(
     currentIndex,
@@ -53,12 +55,13 @@ const WeatherCards = props => {
   return weatherDataBlock.map((value, index) => {
     const cardClasses = classNames(
       classes.weatherCard,
-      value.date === selectWeatherCard.date ? classes.selectedCard : undefined
+      value.date === selectedWeather.date ? classes.selectedCard : undefined
     );
     return (
       <Fragment key={index}>
         <Grid item xs={isMobile() ? 12 : 4}>
           <Card
+            className={cardClasses}
             id={"weather-card-" + index}
             onClick={() => {
               props.selectWeatherCard(value);
@@ -69,7 +72,7 @@ const WeatherCards = props => {
                 <li>
                   <Typography variant="h6">
                     Temp: {value[selectedTemp]}{" "}
-                    {selectedTemp == TEMPERATURES.CELCIUS ? "° C" : "° F"}
+                    {selectedTemp === TEMPERATURES.CELCIUS ? "° C" : "° F"}
                   </Typography>
                 </li>
                 <li>Date: {value.displayDate}</li>

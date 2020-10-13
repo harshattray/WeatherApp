@@ -1,0 +1,28 @@
+[
+  {
+    "celcius": "6.43",
+    "date": "2020-10-13",
+    "displayDate": "October 13th 2020",
+    "fahrenheit": "43.00",
+    "weatherByHour": [
+      {
+        "celcius": 9.27,
+        "fahrenheit": 48,
+        "hour": "03:00 PM",
+        "kelvin": 282.42
+      },
+      {
+        "celcius": 5.87,
+        "fahrenheit": 42,
+        "hour": "06:00 PM",
+        "kelvin": 279.02
+      },
+      {
+        "celcius": 4.14,
+        "fahrenheit": 39,
+        "hour": "09:00 PM",
+        "kelvin": 277.29
+      }
+    ]
+  }
+]

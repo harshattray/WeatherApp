@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-12T11:58:00+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T13:41:56+02:00
+ * @Last modified time: 2020-10-13T15:56:30+02:00
  */
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
@@ -19,7 +19,7 @@ export const PaginationComponent = props => {
 
   const paginationTrigger = event => {
     const eventType = event.currentTarget.value;
-    const { actions, currentIndex } = props;
+    const { currentIndex } = props;
     setCurrentIndex(
       eventType === "previous" ? currentIndex - 1 : currentIndex + 1
     );

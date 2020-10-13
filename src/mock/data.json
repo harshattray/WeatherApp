@@ -1,0 +1,128 @@
+{
+  "cod": "200",
+  "message": 0,
+  "cnt": 40,
+  "list": [
+    {
+      "dt": 1602601200,
+      "main": {
+        "temp": 282.42,
+        "feels_like": 280.04,
+        "temp_min": 282.42,
+        "temp_max": 282.5,
+        "pressure": 1011,
+        "sea_level": 1011,
+        "grnd_level": 950,
+        "humidity": 77,
+        "temp_kf": -0.08
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "light rain",
+          "icon": "10d"
+        }
+      ],
+      "clouds": {
+        "all": 55
+      },
+      "wind": {
+        "speed": 1.93,
+        "deg": 52
+      },
+      "visibility": 10000,
+      "pop": 0.28,
+      "rain": {
+        "3h": 0.24
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2020-10-13 15:00:00"
+    },
+    {
+      "dt": 1602612000,
+      "main": {
+        "temp": 279.02,
+        "feels_like": 277.04,
+        "temp_min": 278.11,
+        "temp_max": 279.02,
+        "pressure": 1013,
+        "sea_level": 1013,
+        "grnd_level": 951,
+        "humidity": 83,
+        "temp_kf": 0.91
+      },
+      "weather": [
+        {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03n"
+        }
+      ],
+      "clouds": {
+        "all": 38
+      },
+      "wind": {
+        "speed": 0.73,
+        "deg": 97
+      },
+      "visibility": 10000,
+      "pop": 0.11,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2020-10-13 18:00:00"
+    },
+    {
+      "dt": 1602622800,
+      "main": {
+        "temp": 277.29,
+        "feels_like": 275.35,
+        "temp_min": 276.94,
+        "temp_max": 277.29,
+        "pressure": 1013,
+        "sea_level": 1013,
+        "grnd_level": 951,
+        "humidity": 86,
+        "temp_kf": 0.35
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 73
+      },
+      "wind": {
+        "speed": 0.38,
+        "deg": 169
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2020-10-13 21:00:00"
+    }
+  ],
+  "city": {
+    "id": 2867714,
+    "name": "Munich",
+    "coord": {
+      "lat": 48.1374,
+      "lon": 11.5755
+    },
+    "country": "DE",
+    "population": 1260391,
+    "timezone": 7200,
+    "sunrise": 1602567023,
+    "sunset": 1602606540
+  }
+}

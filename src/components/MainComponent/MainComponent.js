@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-09T17:07:54+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-13T15:35:29+02:00
+ * @Last modified time: 2020-10-13T15:59:30+02:00
  */
 
 import React, { Fragment, Component } from "react";
@@ -65,6 +65,7 @@ class MainComponent extends Component {
               <WeatherCardsComponent
                 classes={classes}
                 selectedTemp={selectedTemp}
+                selectedWeather={selectedWeather}
               />
               <ChartsComponent
                 classes={classes}
