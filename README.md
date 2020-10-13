@@ -2,7 +2,7 @@
 
 Fetch and display relevant weather info, built using React, Redux.
 
-The repo is hosted here `https://cranky-shockley-74d2c8.netlify.app/`
+The repo is hosted here [https://cranky-shockley-74d2c8.netlify.app/](https://cranky-shockley-74d2c8.netlify.app/)
 
 ### Clone the repo
 
