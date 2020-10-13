@@ -2,13 +2,12 @@
  * @Author: harsha
  * @Date:   2020-10-10T15:56:59+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T13:58:29+02:00
+ * @Last modified time: 2020-10-13T17:56:11+02:00
  */
 
 import {
   INIT_FETCH_WEATHER,
   FETCHING_WEATHER,
-  FETCHING_WEATHER_FAIL,
   SELECT_WEATHER_CARD,
   SET_CURRENT_INDEX,
   SELECTED_TEMP_TYPE
