@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-10T15:56:59+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-13T17:56:11+02:00
+ * @Last modified time: 2020-10-13T18:28:26+02:00
  */
 
 import {
@@ -20,6 +20,13 @@ let initial_state = {
   currentIndex: 0,
   selectedTemp: "celcius"
 };
+
+/**
+ * [Reducers are housed here]
+ * @param  {[type]} [state=initial_state] [description]
+ * @param  {[type]} action                [description]
+ * @return {[type]}                       [description]
+ */
 
 export default (state = initial_state, action) => {
   switch (action.type) {

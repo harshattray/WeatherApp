@@ -2,11 +2,16 @@
  * @Author: harsha
  * @Date:   2020-10-12T11:58:00+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-13T15:56:30+02:00
+ * @Last modified time: 2020-10-13T18:26:28+02:00
  */
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
+
+/**
+ * [PaginationComponent Responsible for the pagination functionality]
+ * @param {[type]} props [description]
+ */
 
 export const PaginationComponent = props => {
   const { classes, setCurrentIndex, currentIndex, weatherListing } = props;

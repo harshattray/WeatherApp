@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-10T16:00:41+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-13T17:03:47+02:00
+ * @Last modified time: 2020-10-13T18:27:44+02:00
  */
 import React, { Fragment, Component } from "react";
 import { bindActionCreators } from "redux";
@@ -12,6 +12,11 @@ import classNames from "classnames";
 import { isMobile } from "../../helpers/helpers";
 import { TEMPERATURES } from "../../helpers/constants";
 import { selectWeatherCard } from "../../actions/fetchWeatherActions";
+
+/**
+ * [direction Displays the weather information]
+ * @type {Object}
+ */
 
 export class WeatherCardsComponent extends Component {
   render() {
@@ -44,6 +49,11 @@ export class WeatherCardsComponent extends Component {
     );
   }
 }
+
+/**
+ * [WeatherCards A floater component to render the weather cards]
+ * @param {[type]} props [description]
+ */
 
 export const WeatherCards = props => {
   const { classes, currentIndex, selectedTemp, selectedWeather } = props;

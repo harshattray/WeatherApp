@@ -2,12 +2,17 @@
  * @Author: harsha
  * @Date:   2020-10-13T15:24:22+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-13T16:13:31+02:00
+ * @Last modified time: 2020-10-13T18:25:09+02:00
  */
 
 import React from "react";
 import { Typography, Grid } from "@material-ui/core";
 import Chart from "react-apexcharts";
+
+/**
+ * [ChartsComponent Renders the Chart component]
+ * @param {[type]} props [Takes in the style props along with the selectedWeather chunk and the temperature choice]
+ */
 
 export const ChartsComponent = props => {
   const { selectedTemp, selectedWeather, classes } = props;

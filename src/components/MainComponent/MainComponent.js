@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-09T17:07:54+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-13T15:59:30+02:00
+ * @Last modified time: 2020-10-13T18:26:05+02:00
  */
 
 import React, { Fragment, Component } from "react";
@@ -22,6 +22,11 @@ import { TemperatureSelectorComponent } from "../TemperatureSelectorComponent/Te
 import { ChartsComponent } from "../ChartsComponent/ChartsComponent";
 
 import styles from "../../globalstyles/globalStyles";
+
+/**
+ * [MainComponent This is the inital workhorse component responsible for the structure and initial api call]
+ * @extends Component
+ */
 
 class MainComponent extends Component {
   componentDidMount() {

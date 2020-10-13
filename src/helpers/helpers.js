@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-10T16:40:49+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-11T16:08:36+02:00
+ * @Last modified time: 2020-10-13T18:30:11+02:00
  */
 
 import moment from "moment";
@@ -14,7 +14,18 @@ import {
   TEMPERATURES
 } from "./constants";
 
+/**
+ * [isMobile To check the window size, handy to switch from desktop to mobile]
+ * @return {Boolean} [description]
+ */
+
 export const isMobile = () => window.screen.availWidth < 767;
+
+/**
+ * [weatherDataBuilder Weather stack builder, this is called in the reducer which feeds the return value from here to the store]
+ * @param  {[type]} weather [description]
+ * @return {[type]}         [description]
+ */
 
 export const weatherDataBuilder = weather => {
   if (!weather || !weather.list) {
@@ -62,6 +73,12 @@ export const weatherDataBuilder = weather => {
   return Array.from(weatherDataStack.values());
 };
 
+/**
+ * [convertKelvinToCelsius description]
+ * @param  {[type]} kelvin [description]
+ * @return {[type]}        [description]
+ */
+
 export const convertKelvinToCelsius = kelvin => {
   if (kelvin < 0) {
     throw new Error("Invalid");
@@ -70,6 +87,11 @@ export const convertKelvinToCelsius = kelvin => {
   }
 };
 
+/**
+ * [convertKelvinToFahrenheit description]
+ * @param  {[type]} kelvin [description]
+ * @return {[type]}        [description]
+ */
 export const convertKelvinToFahrenheit = kelvin => {
   if (kelvin < 0) {
     throw new Error("Invalid");

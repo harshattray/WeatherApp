@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-10-10T15:46:23+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-10-12T13:54:42+02:00
+ * @Last modified time: 2020-10-13T18:23:51+02:00
  */
 
 import axios from "axios";
@@ -16,6 +16,11 @@ import {
 } from "./types";
 
 import { API } from "../helpers/constants";
+
+/**
+ * [fetchWeatherData  fetch call to get the weather data]
+ * @return {[type]} [description]
+ */
 
 export const fetchWeatherData = () => async (dispatch, getState) => {
   dispatch(initfetchWeatherData());
@@ -35,12 +40,23 @@ export const fetchWeatherData = () => async (dispatch, getState) => {
   }
 };
 
+/**
+ * [selectWeatherCard selects card]
+ * @param  {[type]} value [takes in the selected value]
+ * @return {[type]}       [description]
+ */
+
 export const selectWeatherCard = value => async (dispatch, getState) => {
   dispatch({
     type: SELECT_WEATHER_CARD,
     payload: value
   });
 };
+
+/**
+ * [setCurrentIndex sets the current Index valu which can be incremented or decremented based on the pagination]
+ * @param {[type]} value [description]
+ */
 
 export const setCurrentIndex = value => async (dispatch, getState) => {
   dispatch({
@@ -49,12 +65,23 @@ export const setCurrentIndex = value => async (dispatch, getState) => {
   });
 };
 
+/**
+ * [selectTempType Helps in selecting the temperature value, the initial value is set in the reducer and it can be switched using this]
+ * @param  {[type]} value [description]
+ * @return {[type]}       [description]
+ */
+
 export const selectTempType = value => async (dispatch, getState) => {
   dispatch({
     type: SELECTED_TEMP_TYPE,
     payload: value
   });
 };
+
+/**
+ * [initfetchWeatherData Initial call to set the isLoading state which is responsible for the loading spinner]
+ * @return {[type]} [description]
+ */
 
 export const initfetchWeatherData = () => {
   return {
